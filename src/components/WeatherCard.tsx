@@ -6,6 +6,7 @@ const Card = styled.article`
   border-radius: 1rem;
   padding: 1.5rem;
   margin-top: 1rem;
+  
 `;
 
 type Props = {
@@ -16,7 +17,7 @@ type Props = {
 const WeatherCard = ({ data }: Props) => {
   const weatherMain = data.weather[0].main;
   const description = data.weather[0].description;
-  const customIcon = weatherIcons[weatherMain];
+  const customIcon = weatherIcons[description.toLowerCase()] || weatherIcons[weatherMain];;
   
   return (
     <Card>

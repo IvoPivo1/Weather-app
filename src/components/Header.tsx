@@ -4,6 +4,7 @@ import styled from "styled-components";
 const Bar = styled.header`
 padding: 1rem;
 border-bottom: 1px solid #1f2937;
+background: rgba(15, 23, 42, 0.8);
 display: flex;
 justify-content: center;
 `;

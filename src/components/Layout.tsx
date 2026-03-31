@@ -4,7 +4,7 @@ import Header from "./Header";
 
 const Wrapper = styled.div`
 min-height: 100vh;
-background: linear-gradient(180deg, #0f172a, #1e293b);
+background: linear-gradient(211deg,rgba(0, 44, 125, 1) 17%, rgba(0, 61, 94, 1) 48%, rgba(10, 149, 255, 1) 100%);
 color: #e5e7eb;
 display: flex;
 flex-direction: column;

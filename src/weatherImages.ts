@@ -14,4 +14,8 @@ export const weatherIcons: Record<string, string> = {
   Ash: "/src/assets/weather/foggy.png",
   Squall: "/src/assets/weather/wind.png",
   Tornado: "/src/assets/weather/wind.png",
+
+  "few clouds": "/src/assets/weather/few-clouds.png",
+  "scattered clouds": "/src/assets/weather/few-clouds.png",
+  "broken clouds": "/src/assets/weather/few-clouds.png",
 };

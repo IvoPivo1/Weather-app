@@ -1,0 +1,17 @@
+export const weatherIcons: Record<string, string> = {
+  Clear: "/src/assets/weather/sun.png",
+  Clouds: "/src/assets/weather/clouds.png",
+  Rain: "/src/assets/weather/rain.png",
+  Drizzle: "/src/assets/weather/rain.png",
+  Thunderstorm: "/src/assets/weather/storm.png",
+  Snow: "/src/assets/weather/snow.png",
+  Mist: "/src/assets/weather/foggy.png",
+  Fog: "/src/assets/weather/foggy.png",
+  Haze: "/src/assets/weather/foggy.png",
+  Smoke: "/src/assets/weather/foggy.png",
+  Dust: "/src/assets/weather/foggy.png",
+  Sand: "/src/assets/weather/foggy.png",
+  Ash: "/src/assets/weather/foggy.png",
+  Squall: "/src/assets/weather/wind.png",
+  Tornado: "/src/assets/weather/wind.png",
+};

@@ -15,6 +15,7 @@ flex: 1;
 max-width: 800px;
 margin: 0 auto;
 padding: 2rem 1rem 3rem;
+font-family: 'Inter', sans-serif;
 `;
 
 type LayoutProps = {

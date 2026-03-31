@@ -3,7 +3,7 @@ const BASE_URL = "https://api.openweathermap.org/data/2.5";
 
 export type WeatherResponse = {
   name: string;
-  weather: { description: string; icon: string }[];
+  weather: { main: string; description: string; icon: string }[];
   main: { temp: number; feels_like: number; humidity: number };
   wind: { speed: number };
 };

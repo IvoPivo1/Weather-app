@@ -9,10 +9,11 @@ justify-content: center;
 `;
 
 const Title = styled(Link)`
-font-size: 1.5rem;
+font-size: 2.1rem;
 font-weight: 700;
 color: #e5e7eb;
 text-decoration: none;
+font-family: 'Inter', sans-serif;
 `;
 
 const Header = () => (

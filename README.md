@@ -11,8 +11,8 @@ En väderapp byggd med React, TypeScript, Vite och styled-components. Användare
 - [x] README.md finns
 - [ ] Demo-länk (Netlify/Vercel)
 - [ ] Muntlig presentation genomförd
-- [] CSS-in-JS lib används (styled-components)
-- [] Data från web-API hämtas och visas
+- [X] CSS-in-JS lib används (styled-components)
+- [X] Data från web-API hämtas och visas
 
 ## Kör projektet
 

@@ -43,15 +43,21 @@ const Button = styled.button`
   }
 `;
 
-const SearchBar = () => {
+type Props = {
+  addCity: (city: string) => void;
+};
+
+const SearchBar = ({addCity}: Props) => {
   const [city, setCity] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (!city.trim()) return;
-    navigate(`/weather/${encodeURIComponent(city.trim())}`);
-  };
+
+    addCity(city.trim());
+    navigate("/weather");
+    };
 
   return (
     <Wrapper onSubmit={handleSubmit}>

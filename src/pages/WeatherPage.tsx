@@ -6,6 +6,7 @@ import { useState } from "react";
 type Props = {
   cities: string[];
   removeCity: (city: string) => void;
+  darkMode: boolean;
 };
 
 const CardsWrapper = styled.div`
@@ -16,9 +17,14 @@ const CardsWrapper = styled.div`
   transition: all 0.3s ease;
 `;
 
-const Card = styled.div`
+const Card = styled.div<{darkMode: boolean}>`
   position: relative;
-  background: rgba(30, 41, 59, 0.55); 
+  background: ${({ darkMode }) =>
+  darkMode
+    ? "rgba(30, 41, 59, 0.55)"
+    : "rgba(255, 255, 255, 0.7)"};
+  color: ${({ darkMode }) => (darkMode ? "#e5e7eb" : "#0f172a")};
+  backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);     
   -webkit-backdrop-filter: blur(12px);
   padding: 1rem;
@@ -75,7 +81,7 @@ const RemoveButton = styled.button`
   }
 `;
 
-const WeatherPage = ({ cities, removeCity }: Props) => {
+const WeatherPage = ({ cities, removeCity, darkMode}: Props) => {
   const { city } = useParams();
   const navigate = useNavigate();
   const [removing, setRemoving] = useState<string | null>(null);
@@ -91,7 +97,7 @@ const WeatherPage = ({ cities, removeCity }: Props) => {
         <h1>Weather in {decodeURIComponent(city)}</h1>
 
         <CardsWrapper>
-          <WeatherDetails city={city} />
+          <WeatherDetails city={city} darkMode={darkMode} />
         </CardsWrapper>
       </section>
     );
@@ -105,10 +111,10 @@ const WeatherPage = ({ cities, removeCity }: Props) => {
 
       <CardsWrapper>
         {cities.map((c) => (
-          <Card key={c} className={removing === c ? "fade-out" : "fade-in"}>
+          <Card key={c} darkMode={darkMode} className={removing === c ? "fade-out" : "fade-in"}>
             <RemoveButton onClick={() => handleRemove(c)}>×</RemoveButton>
             <h2>Weather in {c}</h2>
-            <WeatherDetails city={c} />
+            <WeatherDetails city={c} darkMode={darkMode} />
           </Card>
         ))}
       </CardsWrapper>

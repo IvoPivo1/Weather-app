@@ -25,7 +25,7 @@ function App() {
         {/* Multi-city page */}
         <Route
           path='/weather'
-          element={<WeatherPage cities={cities} removeCity={removeCity} />}
+          element={<WeatherPage cities={cities} removeCity={removeCity} darkMode={darkMode} />}
         />
       </Routes>
     </Layout>

@@ -9,9 +9,10 @@ margin-top: 1rem;
 
 type Props = {
     city: string;
+    darkMode: boolean;
 };
 
-const WeatherDetails = ({ city }: Props) => {
+const WeatherDetails = ({ city, darkMode }: Props) => {
     const [data, setData] = useState<WeatherResponse | null>(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
@@ -46,7 +47,7 @@ const WeatherDetails = ({ city }: Props) => {
     if (error) return <Message>{error}</Message>;
     if (!data) return <Message>No data available</Message>;
 
-    return <WeatherCard data={data} />;
+    return <WeatherCard data={data} darkMode={darkMode}/>;
 };
 
 export default WeatherDetails;

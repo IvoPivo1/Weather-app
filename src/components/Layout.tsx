@@ -7,13 +7,40 @@ const Wrapper = styled.div<{ darkMode: boolean }>`
   background: ${({ darkMode }) =>
     darkMode
       ? "linear-gradient(211deg,rgba(0, 44, 125, 1) 17%, rgba(0, 61, 94, 1) 48%, rgba(10, 149, 255, 1) 100%)"
-      : "#f1f5f9"};
+      : "linear-gradient(180deg, #6198ff 0%, #ffffff 100%)"};
   color: ${({ darkMode }) => (darkMode ? "#e5e7eb" : "#0f172a")};
+  transition:
+    background 0.4s ease,
+    color 0.4s ease;
   display: flex;
   flex-direction: column;
-  transition:
-    background 0.3s ease,
-    color 0.3s ease;
+`;
+
+const ToggleWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+`;
+
+const DMSwitch = styled.div<{ darkMode: boolean }>`
+  width: 52px;
+  height: 28px;
+  background: ${({ darkMode }) => (darkMode ? "#4b5563" : "#d1d5db")};
+  border-radius: 999px;
+  padding: 3px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+`;
+const Knob = styled.div<{ darkMode: boolean }>`
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  transform: ${({ darkMode }) =>
+    darkMode ? "translateX(24px)" : "translateX(0)"};
+  transition: transform 0.3s ease;
 `;
 
 const Main = styled.main`
@@ -33,21 +60,12 @@ type LayoutProps = {
 const Layout = ({ children, darkMode, setDarkMode }: LayoutProps) => (
   <Wrapper darkMode={darkMode}>
     <Header />
-    <button
-      onClick={() => setDarkMode(!darkMode)}
-      style={{
-        margin: "1rem auto",
-        padding: "0.5rem 1rem",
-        borderRadius: "0.5rem",
-        border: "none",
-        cursor: "pointer",
-        background: darkMode ? "#e5e7eb" : "#1e293b",
-        color: darkMode ? "#1e293b" : "#e5e7eb",
-        transition: "0.3s",
-      }}
-    >
-      {darkMode ? "Light Mode" : "Dark Mode"}
-    </button>
+    <ToggleWrapper>
+      <DMSwitch darkMode={darkMode} onClick={() => setDarkMode(!darkMode)}>
+        <Knob darkMode={darkMode} />
+      </DMSwitch>
+    </ToggleWrapper>
+
     <Main>{children}</Main>
   </Wrapper>
 );

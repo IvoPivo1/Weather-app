@@ -4,8 +4,8 @@ En väderapp byggd med React, TypeScript, Vite och styled-components. Användare
 
 ## Krav (checklista)
 
-- [] Minst 6 komponenter
-- [] Minst 2 statefulla komponenter
+- [x] Minst 6 komponenter
+- [x] Minst 2 statefulla komponenter
 - [x] React Router används för dynamisk URL
 - [x] Git & GitHub används
 - [x] README.md finns

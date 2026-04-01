@@ -14,9 +14,11 @@ function App() {
   const addCity = (city: string) => {
     setCities((prev) => [...prev, city]);
   };
+
+  const [darkMode, setDarkMode] = useState(true);
   
   return (
-    <Layout>
+    <Layout darkMode={darkMode} setDarkMode={setDarkMode}>
       <Routes>
         <Route path='/' element={<HomePage addCity={addCity} />} />
 

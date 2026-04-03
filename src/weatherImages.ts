@@ -13,6 +13,7 @@ import Sand from "/src/assets/weather/foggy.png"
 import Ash from "/src/assets/weather/foggy.png"
 import Squall from "/src/assets/weather/wind.png"
 import Tornado from "/src/assets/weather/wind.png"
+import FewClouds from "/src/assets/weather/few-clouds.png"
 
 
 
@@ -33,7 +34,8 @@ export const weatherIcons: Record<string, string> = {
   Squall,
   Tornado,
 
-  "few clouds": "/src/assets/weather/few-clouds.png",
-  "scattered clouds": "/src/assets/weather/few-clouds.png",
-  "broken clouds": "/src/assets/weather/few-clouds.png",
+  "few clouds": FewClouds,
+  "scattered clouds": FewClouds,
+  "broken clouds": FewClouds,
+
 };

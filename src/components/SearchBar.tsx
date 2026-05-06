@@ -42,6 +42,7 @@ const Button = styled.button`
     background: #7dd3fc;
   }
 `;
+
 const Suggestions = styled.ul`
   position: absolute;
   top: 110%;
@@ -72,37 +73,36 @@ type Props = {
   addCity: (city: string) => void;
 };
 
-const SearchBar = ({addCity}: Props) => {
+const SearchBar = ({ addCity }: Props) => {
   const [city, setCity] = useState("");
   const [suggestions, setSuggestions] = useState<any[]>([]);
   const navigate = useNavigate();
 
-  const fetchSuggestions = async (value: string)=> {
-    if (value.length <1){
+  const fetchSuggestions = async (value: string) => {
+    if (value.length < 1) {
       setSuggestions([]);
       return;
     }
-  
 
-  const res = await fetch(
-    `https://api.openweathermap.org/geo/1.0/direct?q=${value}&limit=5&appid=fc1d7d8c15cf1493458eae92c889da97`
-  );
+    const res = await fetch(
+      `https://api.openweathermap.org/geo/1.0/direct?q=${value}&limit=5&appid=${import.meta.env.VITE_OPENWEATHER_API_KEY}`
+    );
 
-  const data = await res.json();
-  setSuggestions(data);
-}
+    const data = await res.json();
+    setSuggestions(data);
+  };
 
   const handleChange = (value: string) => {
     setCity(value);
     fetchSuggestions(value);
-  }
+  };
 
   const handleSelect = (name: string) => {
     setCity(name);
     setSuggestions([]);
     addCity(name);
     navigate("/weather");
-  }
+  };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -110,12 +110,12 @@ const SearchBar = ({addCity}: Props) => {
 
     addCity(city.trim());
     navigate("/weather");
-    };
+  };
 
   return (
     <Wrapper as="form" onSubmit={handleSubmit}>
-      <div style={{position:"relative", flex: 1}}>
-      <Input
+      <div style={{ position: "relative", flex: 1 }}>
+        <Input
           value={city}
           onChange={(e) => handleChange(e.target.value)}
           placeholder="Search for a city..."

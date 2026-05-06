@@ -45,8 +45,15 @@ const Knob = styled.div<{ darkMode: boolean }>`
 
 const Main = styled.main`
   flex: 1;
-  max-width: 800px;
   margin: 0 auto;
+  max-width: 330px;
+   @media (min-width: 600px) {
+    max-width: 700px; /* iPad */
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 800px; /* desktop */
+  }
   padding: 2rem 1rem 3rem;
   font-family: "Inter", sans-serif;
 `;

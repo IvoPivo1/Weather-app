@@ -22,9 +22,14 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage addCity={addCity} />} />
 
-        {/* Multi-city page */}
         <Route
           path='/weather'
+          element={<WeatherPage cities={cities} removeCity={removeCity} darkMode={darkMode} />}
+        />
+
+        {/* ⭐ SINGLE CITY ROUTE — DENNA SAKNAS HOS DIG */}
+        <Route
+          path='/weather/:city'
           element={<WeatherPage cities={cities} removeCity={removeCity} darkMode={darkMode} />}
         />
       </Routes>

@@ -3,9 +3,35 @@ const BASE_URL = "https://api.openweathermap.org/data/2.5";
 
 export type WeatherResponse = {
   name: string;
-  weather: { main: string; description: string; icon: string }[];
-  main: { temp: number; feels_like: number; humidity: number };
-  wind: { speed: number };
+  visibility: number;
+
+  coord: {
+    lon: number;
+    lat: number;
+  };
+
+  weather: {
+    main: string;
+    description: string;
+    icon: string;
+  }[];
+
+  main: {
+    temp: number;
+    feels_like: number;
+    humidity: number;
+    pressure: number;
+  };
+
+  wind: {
+    speed: number;
+    gust?: number;
+  };
+
+  sys: {
+    sunrise: number;
+    sunset: number;
+  };
 };
 
 export async function getCurrentWeather(city: string): Promise<WeatherResponse> {

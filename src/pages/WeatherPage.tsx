@@ -133,15 +133,21 @@ const DetailBox = ({ title, value }: { title: string; value: string }) => (
 
 
 const MapFrame = styled.iframe`
+  width: 100%;
   max-width: 100%;
-  overflow: hidden;
   height: 180px;
   border-radius: 1rem;
   border: none;
   margin-top: 1rem;
 
+  /* iPad */
   @media (min-width: 600px) {
     height: 260px;
+  }
+
+  /* Desktop */
+  @media (min-width: 1024px) {
+    height: 350px;
   }
 `;
 
